@@ -1,12 +1,18 @@
 # Leia uma linha com o número do cartão
-numero = input()
-ímpares = []
-for i in numeros[-1::-2]:
-  ímpares.append(int(i))
-pares = []
-for i in numeros[-2::-2]:
-  if 2*int(i)# TODO: implemente a verificação pelo algoritmo de Luhn
-# Siga as dicas do README.
+numero = input().strip()
+digitos = [int(i) for i in numero]
+ímpares = digitos[-1::-2]
+pares = digitos[-2::-2]
+pares_dobrados = []
+for d in pares:
+  dobro = d * 2
+  if dobro > 9:
+      dobro -= 9
+    pares_dobrados.append(dobro)
+total = sum(impares) + sum(pares_dobrados)
+if total % 10 == 0:
+    print("cartão válido")
+else:
+    print("cartão inválido")
+  
 
-# Ao final, imprima exatamente:
-# print("Cartão válido")  ou  print("Cartão inválido")
